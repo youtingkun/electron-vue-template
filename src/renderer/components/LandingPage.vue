@@ -8,7 +8,7 @@
         </span>
         <system-information></system-information>
       </div>
-        <el-button>123</el-button>
+        <el-button @click="handleHomePage">home page</el-button>
       <div class="right-side">
         <div class="doc">
           <div class="title">Getting Started</div>
@@ -38,6 +38,11 @@
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)
+      },
+      handleHomePage () {
+        this.$router.push({
+          name: 'home-page'
+        })
       }
     }
   }
